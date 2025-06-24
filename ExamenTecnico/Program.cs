@@ -10,11 +10,11 @@ class Program
         Console.WriteLine(simpleVersion(new int[] { 1, 4, 2, 4 }, 8)); // true
 
         Console.WriteLine("\nVersión optimizada:");
-        Console.WriteLine(optimizedVersion(new int[] { 1, 5, 3, 9 }, 8)); // True
+        Console.WriteLine(optimizedVersion(new int[] { 2, 5, 3, 9 }, 8)); // True
         Console.WriteLine(optimizedVersion(new int[] { 1, 2, 2, 4 }, 8)); // False
     }
 
-    // Función Versión 1:  Recorre todos los pares posibles de números y verifica si su suma es igual al número objetivo.
+    // Función Versión simple
     static bool simpleVersion(int[] numeros, int numeroSumado)
     {
         for (int i = 0; i < numeros.Length; i++)
@@ -30,10 +30,10 @@ class Program
         return false;
     }
 
-    // Función Versión 2: optimizada usando HashSet. Recorre el array una sola vez, buscando el complemento necesario en un conjunto de números ya vistos.
+    // Función Versión optimizada
     static bool optimizedVersion(int[] numeros, int numeroSumado)
     {
-        // Guardamos los números ya recorridos.
+        // Para guardar los números que se recorren en el array.
         HashSet<int> seen = new HashSet<int>();
 
         foreach (int num in numeros)
